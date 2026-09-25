@@ -26,9 +26,9 @@ class UserManager(BaseUserManager):
         """
         user = self.create_user(
             email,
-            password=password,
             name=name,
             tc = tc,
+            password=password,
         )
         user.is_admin = True
         user.save(using=self._db)
@@ -64,16 +64,16 @@ class User(AbstractBaseUser):
 
     def has_perm(self, perm, obj=None):
         "Does the user have a specific permission?"
-        # Simplest possible answer: Yes, always
+        #  Yes, always
         return self.is_admin
 
     def has_module_perms(self, app_label):
         "Does the user have permissions to view the app `app_label`?"
-        # Simplest possible answer: Yes, always
+        #  Yes, always
         return self.is_admin
 
     @property
     def is_staff(self):
         "Is the user a member of staff?"
-        # Simplest possible answer: All admins are staff
+        #  All admins are staff
         return self.is_admin

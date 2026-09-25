@@ -236,12 +236,16 @@ Allow or Deny Access
 -  Simple JWT package installed.
 -  CORS headers package installed.
 -  Git and GitHub repository setup.
+- [x] Custom User Model
+- [x] Custom User Manager
+- [x] User Registration API
+- [x] Login API
+- [x] Password confirmation validation
+- [x] API testing with Postman
+
 
 ### In Progress / Upcoming
 
--  Custom User Model.
--  Custom User Manager.
--  User Registration API.
 -  JWT Login.
 -  Manual token creation.
 -  Access and refresh token handling.
@@ -250,6 +254,19 @@ Allow or Deny Access
 -  Custom permissions.
 -  API testing.
 -  Frontend integration.
+
+## 🐛 Debugging & Learning
+
+During development, I encountered and fixed several issues, including:
+
+- Fixed the `password2` field being passed to `User.objects.create_user()`. The field is only required for password confirmation and must be removed before creating the user.
+- Fixed a variable naming error while retrieving the email during login.
+- Learned to use `serializer.validated_data` after serializer validation.
+-Handle AttributeError.
+- Debugged HTTP 500 errors using the Django development server traceback.
+- Tested the registration and login APIs using Postman.
+
+These debugging experiences helped me better understand DRF serializers, validation, custom user managers, and Django authentication.
 
 ## 📌 Planned API Endpoints
 
